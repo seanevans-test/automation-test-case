@@ -6,5 +6,7 @@ public class SecureAreaPage {
 
     private WebDriver driver;
 
-
+    public SecureAreaPage(WebDriver driver){
+        this.driver = driver;
+    }
 }
