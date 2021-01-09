@@ -17,9 +17,16 @@ public class KeyPressesTests extends BaseTests {
     }
 
     @Test
-    public void testAlt(){
+    public void testALT(){
         KeyPressesPage keyPressesPage = homepage.clickKeyPresses();
         keyPressesPage.enterText("" + Keys.ALT);
         assertEquals(keyPressesPage.getResult(), "You entered: ALT");
+    }
+
+    @Test
+    public void testCONTROL(){
+        KeyPressesPage keyPressesPage = homepage.clickKeyPresses();
+        keyPressesPage.enterText("" + Keys.CONTROL);
+        assertEquals(keyPressesPage.getResult(), "You entered: CONTROL");
     }
 }
