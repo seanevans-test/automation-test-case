@@ -18,10 +18,6 @@ public class KeyPressesPage {
         driver.findElement(inputField).sendKeys(text);
     }
 
-    public void enterKeys(){
-        enterText(Keys.chord(Keys.ALT));
-    }
-
     public String getResult(){
         return driver.findElement(resultText).getText();
     }
