@@ -29,4 +29,11 @@ public class KeyPressesTests extends BaseTests {
         keyPressesPage.enterText("" + Keys.CONTROL);
         assertEquals(keyPressesPage.getResult(), "You entered: CONTROL");
     }
+
+    @Test
+    public void testArrowLeft(){
+        KeyPressesPage keyPressesPage = homepage.clickKeyPresses();
+        keyPressesPage.enterText("" + Keys.ARROW_LEFT);
+        assertEquals(keyPressesPage.getResult(), "You entered: LEFT");
+    }
 }
