@@ -19,4 +19,13 @@ public class LoginTests extends BaseTests {
                 secureAreaPage.getAlertText()
                                 .contains("You logged into a secure area!"));
     }
+
+    @Test
+    public void testIncorrectUsername(){
+        LoginPage loginPage = homepage.clickFormAuthentication();
+        loginPage.setUsername("thomassmith");
+        loginPage.setPassword("SuperSecretPassword!");
+        SecureAreaPage secureAreaPage = loginPage.ClickLoginButton();
+        assertTrue(loginPage.getFailureAlert().contains("Your username is invalid!"));
+    }
 }
