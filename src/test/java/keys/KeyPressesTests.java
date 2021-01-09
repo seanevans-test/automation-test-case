@@ -15,4 +15,11 @@ public class KeyPressesTests extends BaseTests {
         keyPressesPage.enterText("A" + Keys.BACK_SPACE);
         assertEquals(keyPressesPage.getResult(), "You entered: BACK_SPACE");
     }
+
+    @Test
+    public void testAlt(){
+        KeyPressesPage keyPressesPage = homepage.clickKeyPresses();
+        keyPressesPage.enterText("" + Keys.ALT);
+        assertEquals(keyPressesPage.getResult(), "You entered: ALT");
+    }
 }
