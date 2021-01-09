@@ -9,6 +9,7 @@ public class LoginPage {
     private By usernameField = By.id("username");
     private By passwordField = By.id("password");
     private By loginButton = By.cssSelector("#login button");
+    private By loginFailAlert = By.id("flash");
 
     public LoginPage(WebDriver driver){
         this.driver = driver;
@@ -25,5 +26,9 @@ public class LoginPage {
     public SecureAreaPage ClickLoginButton(){
         driver.findElement(loginButton).click();
         return new SecureAreaPage(driver);
+    }
+
+    public String getFailureAlert(){
+        return driver.findElement(loginFailAlert).getText();
     }
 }
