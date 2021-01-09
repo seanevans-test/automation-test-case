@@ -17,6 +17,6 @@ public class LoginTests extends BaseTests {
         SecureAreaPage secureAreaPage = loginPage.ClickLoginButton();
         assertTrue("Alert text is incorrect",
                 secureAreaPage.getAlertText()
-                                .contains("You logged into a secure area! x"));
+                                .contains("You logged into a secure area!"));
     }
 }
