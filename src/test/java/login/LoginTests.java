@@ -15,7 +15,7 @@ public class LoginTests extends BaseTests {
         loginPage.setUsername("tomsmith");
         loginPage.setPassword("wrongPASSWORD!");
         SecureAreaPage secureAreaPage = loginPage.ClickLoginButton();
-        assertTrue(loginPage.getFailureAlert().contains("Your password is invalid!"));
+        assertTrue(loginPage.getFlashMessage().contains("Your password is invalid!"));
     }
 
     @Test
@@ -24,7 +24,7 @@ public class LoginTests extends BaseTests {
         loginPage.setUsername("thomassmith");
         loginPage.setPassword("SuperSecretPassword!");
         SecureAreaPage secureAreaPage = loginPage.ClickLoginButton();
-        assertTrue(loginPage.getFailureAlert().contains("Your username is invalid!"));
+        assertTrue(loginPage.getFlashMessage().contains("Your username is invalid!"));
     }
 
     @Test
@@ -36,6 +36,8 @@ public class LoginTests extends BaseTests {
         assertTrue("Alert text is incorrect",
                 secureAreaPage.getAlertText()
                                 .contains("You logged into a secure area!"));
+        LoginPage loginPage1 = secureAreaPage.ClickLogoutButton();
+        assertTrue(loginPage.getFlashMessage().contains("You logged out of the secure area!"));
     }
 }
 
