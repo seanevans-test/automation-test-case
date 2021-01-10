@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
+
 public class InfiniteScrollPage {
 
     private WebDriver driver;
@@ -14,11 +15,10 @@ public class InfiniteScrollPage {
     }
 
     /**
-     * Scrolls intil the paragraph with index specified is in view
-     * @param index
+     * Scrolls until paragraph with index specified is in view
+     * @param index 1-based
      */
-
-    public void scrollToParagraph(int index){
+    public void scrollToBottom(int index){
         String script = "window.scrollTo(0, document.body.scrollHeight)";
         var jsExecutor = (JavascriptExecutor)driver;
 
@@ -27,8 +27,17 @@ public class InfiniteScrollPage {
         }
     }
 
+    public void scrollToTop(){
+        var jsExecutor = (JavascriptExecutor)driver;
+        jsExecutor.executeScript("window.scrollTo(0, 0)");
+    }
+
     private int getNumberofParagraphsPresent(){
         return driver.findElements(textBlocks).size();
     }
 
+    public String getHeaderText(){
+        return driver.findElement(By.tagName("h3")).getText();
+    }
 }
+
