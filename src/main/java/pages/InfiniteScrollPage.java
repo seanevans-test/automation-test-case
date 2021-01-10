@@ -30,16 +30,23 @@ public class InfiniteScrollPage {
     /**
      * Scrolls back to the 0,0 co-ordinates
      */
-
     public void scrollToTop(){
         var jsExecutor = (JavascriptExecutor)driver;
         jsExecutor.executeScript("window.scrollTo(0, 0)");
     }
 
+    /**
+     * Counts the number of textBlocks
+     * @return int
+     */
     private int getNumberofParagraphsPresent(){
         return driver.findElements(textBlocks).size();
     }
 
+    /**
+     * Finds the h3 element on the page and returns text
+     * @return String
+     */
     public String getHeaderText(){
         return driver.findElement(By.tagName("h3")).getText();
     }
