@@ -15,19 +15,35 @@ public class LoginPage {
         this.driver = driver;
     }
 
+    /**
+     * allows input into the username field
+     * @param username
+     */
     public void setUsername(String username){
         driver.findElement(usernameField).sendKeys(username);
     }
 
+    /**
+     * allows input into the password field
+     * @param password
+     */
     public void setPassword(String password){
         driver.findElement(passwordField).sendKeys(password);
     }
 
+    /**
+     * presses the login button, validating the username and password
+     * @return
+     */
     public SecureAreaPage ClickLoginButton(){
         driver.findElement(loginButton).click();
         return new SecureAreaPage(driver);
     }
 
+    /**
+     * returns the flash message after failed login
+     * @return
+     */
     public String getFlashMessage(){
         return driver.findElement(flashMessage).getText();
     }

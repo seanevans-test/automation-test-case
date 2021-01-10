@@ -1,7 +1,6 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class KeyPressesPage {
@@ -14,10 +13,18 @@ public class KeyPressesPage {
         this.driver = driver;
     }
 
+    /**
+     * inputs text into the input field
+     * @param text
+     */
     public void enterText(String text){
         driver.findElement(inputField).sendKeys(text);
     }
 
+    /**
+     * returns the result
+     * @return
+     */
     public String getResult(){
         return driver.findElement(resultText).getText();
     }
