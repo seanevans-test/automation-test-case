@@ -27,6 +27,10 @@ public class InfiniteScrollPage {
         }
     }
 
+    /**
+     * Scrolls back to the 0,0 co-ordinates
+     */
+
     public void scrollToTop(){
         var jsExecutor = (JavascriptExecutor)driver;
         jsExecutor.executeScript("window.scrollTo(0, 0)");
