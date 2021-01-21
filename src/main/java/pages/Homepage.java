@@ -38,6 +38,16 @@ public class Homepage {
         return new KeyPressesPage(driver);
     }
 
+    /**
+     * link to ForgotPasswordPage
+     * @return
+     */
+
+    public ForgotPasswordPage clickForgotPassword(){
+        clickLink("Forgot Password");
+        return new ForgotPasswordPage(driver);
+    }
+
     private void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }
